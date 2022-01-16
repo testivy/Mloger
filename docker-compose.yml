@@ -1,0 +1,31 @@
+version: '2'
+services:
+  web_redis:
+    image: "redis"
+    restart: always
+    hostname: web_redis
+    ports:
+      - "6379:6379"
+  web_mongo:
+      image: "mongo"
+      restart: always
+      hostname: web_mongo
+      ports:
+        - "27017:27017"
+  server:
+    image: "mlogger"
+    restart: always
+    ports:
+      - "8000:8000"
+      - "8081:8081"
+    command:
+      - python
+      - app.py
+
+    depends_on:
+      - "web_redis"
+      - "web_mongo"
+    links:
+      - "web_redis"
+      - "web_mongo"
+
