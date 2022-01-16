@@ -6,7 +6,7 @@ import redis
 LOCAL_REDIS_CONFIG = {
     "host": "127.0.0.1",
     "port": 6379,
-    "password": "redis_password",
+    #"password": "redis_password",
     "db": 0,
     "max_connections": 100,
     "socket_timeout": 1,
@@ -16,7 +16,7 @@ LOCAL_REDIS_CONFIG = {
 }
 
 REDIS_CONFIG = {
-    "host": "",
+    "host": "web_redis",
     "port": 6379,
     "max_connections": 100,
     "socket_timeout": 5,

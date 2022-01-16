@@ -13,7 +13,7 @@ services:
       ports:
         - "27017:27017"
   server:
-    image: "mlogger"
+    image: "testivy/mlogger"
     restart: always
     ports:
       - "8000:8000"
